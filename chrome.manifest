@@ -1,0 +1,6 @@
+content	backup_zotero				chrome/content/backup_zotero/
+skin	backup_zotero	default		chrome/skin/default/
+
+overlay	chrome://zotero/content/zoteroPane.xul	chrome://backup_zotero/content/overlay.xul
+
+locale backup_zotero en-US chrome/locale/en-US/

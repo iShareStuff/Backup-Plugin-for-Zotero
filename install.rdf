@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>backup_zotero@iShareStuff.github.io</em:id>
+    <em:name>Backup Plugin for Zotero</em:name>
+    <em:version>0.0.1</em:version>
+    <em:type>2</em:type> <!-- type=extension -->
+    <em:creator>ShareStuff(公众号)</em:creator>
+    <em:description>欢迎关注ShareStuff！该插件用于Windows平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
+    <em:homepageURL>https://github.com/iShareStuff/backup_zotero</em:homepageURL>
+    <em:updateURL>https://raw.githubusercontent.com/iShareStuff/backup_zotero/master/backup_zotero-update.rdf</em:updateURL>
+
+    <em:targetApplication>
+      <Description>
+        <em:id>zotero@chnm.gmu.edu</em:id>
+        <em:minVersion>5.0.0</em:minVersion>
+        <em:maxVersion>*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <em:targetApplication>
+      <Description>
+        <em:id>juris-m@juris-m.github.io</em:id>
+        <em:minVersion>5.0.0</em:minVersion>
+        <em:maxVersion>*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <em:localized>
+      <Description>
+        <em:locale>en-US</em:locale>
+        <em:name>Backup Plugin for Zotero</em:name>
+        <em:description>Welcome to Sharestuff! This plugin is used to back up zotero data and configuration files on the Windows platform, which is convenient for multi-device to restore your database!</em:description>
+      </Description>
+    </em:localized>
+	<em:localized>
+		<Description>
+			<em:locale>zh-CN</em:locale>
+			<em:name>Backup Plugin for Zotero</em:name>
+			<em:description>欢迎关注ShareStuff！该插件用于Windows平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
+		</Description>
+	</em:localized>
+  </Description>
+</RDF>
