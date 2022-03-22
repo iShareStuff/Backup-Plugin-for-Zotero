@@ -27,24 +27,41 @@ Zotero.backup_zotero = new function() {
 		var back_path_data = OS.Path.join(back_path, 'data');// 数据备份目录
 		var zotero_profile_ini_back = OS.Path.join(back_path, "zotero_profile_ini");
 		var jurism_profile_ini_back = OS.Path.join(back_path, "jurism_profile_ini");
-		if (await OS.File.exists(back_path)){
-			var truthBeTold = window.confirm('The directory:' +
-			back_path + ' exists' +'\n'+ '\n' + 'click OK to replace'+'\n'+ '\n' + 'click Cancel to stop');
-			
-				if (truthBeTold) {									
-				alert ('profile backup in: ' + back_path_profile + '\n' + '\n' +
-			   'data backup in: ' + back_path_data +  '\n' + '\n' +
-			   'profiles.ini backup in: ' + back_path);
+		if (await OS.File.exists(user_path)){
+			var truthBeTold = window.confirm('Do you want to backup today? Today is '
+			+cur_date +'.\n'+ '\n'+ 'click OK to backup'+'\n'+ '\n' + 'click Cancel to stop');
+				if (truthBeTold) {		
+				
+				if (await OS.File.exists(back_path)){
+						var truthBeTold2 = window.confirm('The directory:  ' +
+						back_path + '  exists' +'\n'+ '\n' + 'click OK to replace'+'\n'+ '\n' + 'click Cancel to stop');
+						
+							if (truthBeTold2) {									
+							alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+						   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+						   'profiles.ini backup in:  ' + back_path);
+								back_up();
+							alert('Please wait, Backup is running, the files are replacing!');
+				}}
+				
+				else{				
+				alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+			   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+			   'profiles.ini backup in:  ' + back_path);
 					back_up();
-				alert('please wait, Backup is running, the files are replacing!');
+				alert('Please wait, Backup is running!');
 				}
-				} else {
-				alert ('profile backup in: ' + back_path_profile + '\n' + '\n' +
-			   'data backup in: ' + back_path_data +  '\n' + '\n' +
-			   'profiles.ini backup in: ' + back_path);
+				}
+		} else {
+				var truthBeTold3 = window.confirm('Do you want to backup for the first time? Today is '
+				+cur_date +'.\n'+ '\n'+ 'click OK to backup'+'\n'+ '\n' + 'click Cancel to stop');
+				if (truthBeTold3) {
+				alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+			   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+			   'profiles.ini backup in:  ' + back_path);
 					back_up();
-				alert('please wait, Backup is running, the files are replacing!');
-		}
+				alert('Please wait, Backup is running!'+ '\n' +'\n'+ 'Good, this is the first time to backup!');
+		}}
 
 		// 备份函数数据、profile和profiles.ini
 		async function back_up (){
