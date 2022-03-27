@@ -70,7 +70,6 @@ Zotero.backup_zotero = new function() {
 					if (truthBeTold5) 
 					{
 						alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
-					   'data backup in:  ' + back_path_data +  '\n' + '\n' +
 					   'profiles.ini backup in:  ' + back_path);
 						back_up_only();
 						alert('Please wait, Backup is running with the profile files');
@@ -97,7 +96,6 @@ Zotero.backup_zotero = new function() {
 					if (truthBeTold6) 
 					{
 						alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
-					   'data backup in:  ' + back_path_data +  '\n' + '\n' +
 					   'profiles.ini backup in:  ' + back_path);
 						back_up_only();
 						alert('Please wait, Backup is running with the profile files'+ '\n' +'\n'+ 'Good, this is the first time to backup!');
