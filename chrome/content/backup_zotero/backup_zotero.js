@@ -18,7 +18,7 @@ Zotero.backup_zotero = new function() {
 
 	this.backup_file = async function() {
 
-		var user_path = 'c:\\backup'; // 用户指定备份目录
+		var user_path = OS.Path.join(OS.Constants.Path.homeDir,'ZoteroBackup'); // 用户指定备份目录
 		var cur_date = new Date().toISOString().split('T')[0]; // 返回当前日期
 		var back_path = OS.Path.join(user_path, cur_date); // 将用户目录与当前日期目录组合
 		var profile = Zotero.Profile.dir;  // 配置目录
@@ -27,44 +27,96 @@ Zotero.backup_zotero = new function() {
 		var back_path_data = OS.Path.join(back_path, 'data');// 数据备份目录
 		var zotero_profile_ini_back = OS.Path.join(back_path, "zotero_profile_ini");
 		var jurism_profile_ini_back = OS.Path.join(back_path, "jurism_profile_ini");
-		if (await OS.File.exists(user_path)){
-			var truthBeTold = window.confirm('Do you want to backup today? Today is '
+		//是否第一次备份
+		if (await OS.File.exists(user_path))
+		{
+			var truthBeTold1 = window.confirm('Do you want to backup today? Today is '
 			+cur_date +'.\n'+ '\n'+ 'click OK to backup'+'\n'+ '\n' + 'click Cancel to stop');
-				if (truthBeTold) {		
-				
-				if (await OS.File.exists(back_path)){
+			//不是第一次备份,今日是否备份
+			if (truthBeTold1) 
+			{	
+				//今日已备份，是否需要替换今日备份			
+				if (await OS.File.exists(back_path))
+				{
 						var truthBeTold2 = window.confirm('The directory:  ' +
 						back_path + '  exists' +'\n'+ '\n' + 'click OK to replace'+'\n'+ '\n' + 'click Cancel to stop');
-						
-							if (truthBeTold2) {									
+						if (truthBeTold2)//替换备份
+						{		
+							//是否只备份设置，不需要全部备份
+							var truthBeTold4 = window.confirm('If you just want to backup profile, click OK '+'\n'+ '\n' + 'If you want to backup profil and data, click Cancel');		
+							if (truthBeTold4) 
+							{
+								alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+							   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+							   'profiles.ini backup in:  ' + back_path);
+								back_up_only();
+								alert('Please wait, Backup is running, the profile files are replacing!');
+							}
+							else
+							{
 							alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
-						   'data backup in:  ' + back_path_data +  '\n' + '\n' +
-						   'profiles.ini backup in:  ' + back_path);
-								back_up();
-							alert('Please wait, Backup is running, the files are replacing!');
-				}}
-				
-				else{				
-				alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
-			   'data backup in:  ' + back_path_data +  '\n' + '\n' +
-			   'profiles.ini backup in:  ' + back_path);
+							'data backup in:  ' + back_path_data +  '\n' + '\n' +
+							'profiles.ini backup in:  ' + back_path);
+							back_up();
+							alert('Please wait, Backup is running, the profile and data files are replacing!');
+							}
+						}
+				}
+				//今日还未备份
+				else
+				{				
+					//是否只备份设置，不需要全部备份
+					var truthBeTold5 = window.confirm('If you just want to backup profile, click OK '+'\n'+ '\n' + 'If you want to backup profil and data, click Cancel');		
+					if (truthBeTold5) 
+					{
+						alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+					   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+					   'profiles.ini backup in:  ' + back_path);
+						back_up_only();
+						alert('Please wait, Backup is running with the profile files');
+					}
+					else
+					{
+					alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+					'data backup in:  ' + back_path_data +  '\n' + '\n' +
+					'profiles.ini backup in:  ' + back_path);
 					back_up();
-				alert('Please wait, Backup is running!');
+					alert('Please wait, Backup is running with the profile and data files');
+					}
 				}
-				}
-		} else {
+			}
+		} //是第一次备份
+		else 
+		{
 				var truthBeTold3 = window.confirm('Do you want to backup for the first time? Today is '
 				+cur_date +'.\n'+ '\n'+ 'click OK to backup'+'\n'+ '\n' + 'click Cancel to stop');
-				if (truthBeTold3) {
-				alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
-			   'data backup in:  ' + back_path_data +  '\n' + '\n' +
-			   'profiles.ini backup in:  ' + back_path);
+				if (truthBeTold3) 
+				{		
+					//是否只备份设置，不需要全部备份
+					var truthBeTold6 = window.confirm('If you just want to backup profile, click OK '+'\n'+ '\n' + 'If you want to backup profil and data, click Cancel');		
+					if (truthBeTold6) 
+					{
+						alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+					   'data backup in:  ' + back_path_data +  '\n' + '\n' +
+					   'profiles.ini backup in:  ' + back_path);
+						back_up_only();
+						alert('Please wait, Backup is running with the profile files'+ '\n' +'\n'+ 'Good, this is the first time to backup!');
+					}
+					else
+					{
+					alert ('profile backup in:  ' + back_path_profile + '\n' + '\n' +
+					'data backup in:  ' + back_path_data +  '\n' + '\n' +
+					'profiles.ini backup in:  ' + back_path);
 					back_up();
-				alert('Please wait, Backup is running!'+ '\n' +'\n'+ 'Good, this is the first time to backup!');
-		}}
+					alert('Please wait, Backup is running with the profile and data files'+ '\n' +'\n'+ 'Good, this is the first time to backup!');
+					}
+				}
+				
+		}
 
-		// 备份函数数据、profile和profiles.ini
-		async function back_up (){
+		// 备份数据、profile和profiles.ini
+		async function back_up ()
+		{
 
 				await  make_dir(user_path);
 				await  make_dir(back_path);
@@ -87,10 +139,33 @@ Zotero.backup_zotero = new function() {
 			   });
 			await back_up_profiles_ini (); //备份prifiles.ini
 		}
+				// 备份profile和profiles.ini
+		async function back_up_only ()
+		{
+
+				await  make_dir(user_path);
+				await  make_dir(back_path);
+				await  make_dir(back_path_profile); // 新建目录
+
+			//await Zotero.File.copyDirectory(profile, back_path_profile);
+			await Zotero.File.iterateDirectory(profile, async function(entry){ //备份profile
+				if (entry.name != "parent.lock") { // 不为parent.lock则复制
+					var dest_profile = OS.Path.join(back_path_profile, entry.name)
+					if (entry.isDir) {
+						Zotero.File.copyDirectory(entry.path, dest_profile);
+					} else {
+						OS.File.copy(entry.path, dest_profile);
+					}
+
+				}
+			   });
+			await back_up_profiles_ini (); //备份prifiles.ini
+		}
 
 
 		// 备份profiles.ini未完成
-		async function back_up_profiles_ini (){
+		async function back_up_profiles_ini ()
+		{
 			var os_user_path = OS.Constants.Path.homeDir; // 得到当前用户目录
 			zotero_profile_ini = "AppData\\Roaming\\Zotero\\Zotero\\profiles.ini"; // Zotero profiles.ini后缀
 			jurism_profile_ini = "AppData\\Roaming\\\Jurism\\Zotero\\profiles.ini"; // Jurism profiles.ini后缀
@@ -109,13 +184,15 @@ Zotero.backup_zotero = new function() {
 
 
 		// 新建目录函数
-		async function make_dir(path){
-			if (!await OS.File.exists(path)) {
+		async function make_dir(path)
+		{
+			if (!await OS.File.exists(path)) 
+			{
 				OS.File.makeDir(path, {
 						ignoreExisting: true,
 							unixMode: 0o755
 						});
-				}
+			}
 
 		}
 
