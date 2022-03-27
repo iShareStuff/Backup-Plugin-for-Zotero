@@ -6,8 +6,11 @@
 # 使用方法
 1. 下载并安装插件；
 2. 每次打开zotero软件，都会弹开一次窗口让您选择是否备份数据。
+
 Win默认目录为C:/Users/share【这里应该是你的用户名】/ZoteroBackup
+
 Linux默认目录为/home/share【这里应该是你的用户名】/ZoteroBackup
+
 【Mac用户未测试，不知道支不支持】
 
 
