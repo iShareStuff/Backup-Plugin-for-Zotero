@@ -7,7 +7,7 @@
     <em:version>0.0.4</em:version>
     <em:type>2</em:type> <!-- type=extension -->
     <em:creator>ShareStuff(公众号)</em:creator>
-    <em:description>欢迎关注ShareStuff！该插件用于Windows平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
+    <em:description>欢迎关注ShareStuff！该插件用于Windows、Linux平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
     <em:homepageURL>https://github.com/iShareStuff/backup_zotero</em:homepageURL>
     <em:updateURL>https://raw.githubusercontent.com/iShareStuff/backup_zotero/master/backup_zotero-update.rdf</em:updateURL>
 
@@ -38,7 +38,7 @@
 		<Description>
 			<em:locale>zh-CN</em:locale>
 			<em:name>Backup Plugin for Zotero</em:name>
-			<em:description>欢迎关注ShareStuff！该插件用于Windows平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
+			<em:description>欢迎关注ShareStuff！该插件用于Windows、Linux平台上备份zotero数据和配置文件，方便多设备恢复还原！</em:description>
 		</Description>
 	</em:localized>
   </Description>

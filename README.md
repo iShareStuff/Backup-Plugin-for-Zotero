@@ -1,12 +1,14 @@
 # Backup Plugin for Zotero
 欢迎关注ShareStuff！全网同名，我在知乎、公众号和B站等您！
 
-该插件用于Windows平台上备份zotero数据和配置文件，方便多设备恢复还原！
+该插件用于Windows、Linux平台上备份zotero数据和配置文件，方便多设备恢复还原！
 
 # 使用方法
 1. 下载并安装插件；
-2. 每次打开zotero软件，都会弹开一次窗口让您选择是否备份数据。默认目录为C:\Users\share【这里应该是你的用户名】\ZoteroBackup
-【Mac用户未测试，不知道支不支持】：
+2. 每次打开zotero软件，都会弹开一次窗口让您选择是否备份数据。
+Win默认目录为C:/Users/share【这里应该是你的用户名】/ZoteroBackup
+Linux默认目录为/home/share【这里应该是你的用户名】/ZoteroBackup
+【Mac用户未测试，不知道支不支持】
 
 
 * 安装好后，会创建默认目录并备份，生成当天的日期文件夹，这也是第一次备份（有提示信息）。
