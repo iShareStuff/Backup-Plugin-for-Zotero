@@ -12,8 +12,16 @@
 jurism_profile_ini和zotero_profile_ini文件夹为路径信息【用不到】，只用于你查看旧电脑的配置文件夹所在位置。
 
 # 使用方法
-1. 下载并安装插件；
-2. 每次打开zotero软件，都会弹开一次窗口让您选择是否备份数据。
+1. 下载并安装插件
+[https://github.com/iShareStuff/Backup-Plugin-for-Zotero/releases](https://github.com/iShareStuff/Backup-Plugin-for-Zotero/releases)
+
+![image](https://user-images.githubusercontent.com/61663626/163553784-28dcb2e9-714e-436c-a549-0a9269910fe2.png)
+
+2. 手动备份
+
+![image](https://user-images.githubusercontent.com/61663626/163553876-a8159a6f-d419-4720-85f4-d80890aedc84.png)
+
+
 
 Win默认目录为C:/Users/share【这里应该是你的用户名】/ZoteroBackup
 
