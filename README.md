@@ -3,6 +3,8 @@
 # Backup Plugin for Zotero
 欢迎关注ShareStuff！全网同名，我在知乎、公众号和B站等您！
 
+![全平台](https://user-images.githubusercontent.com/61663626/163555055-2a800bcf-a139-40cc-b9e1-cc3b7759fd34.jpg)
+
 
 该插件用于Windows、Linux平台上备份zotero数据和配置文件，方便多设备恢复还原！
 
