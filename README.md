@@ -1,7 +1,5 @@
-# 本文使用AGPL v3协议，也就是说，除非获得商业授权，否则无论以何种方式修改或者使用代码，都需要开源。
-
 # Backup Plugin for Zotero
-欢迎关注ShareStuff！全网同名，我在知乎、公众号和B站等您！
+欢迎[B站](https://space.bilibili.com/20435673)、[知乎](https://www.zhihu.com/people/ShareStuff/posts)和公众号关注ShareStuff！
 
 ![全平台](https://user-images.githubusercontent.com/61663626/163555055-2a800bcf-a139-40cc-b9e1-cc3b7759fd34.jpg)
 
