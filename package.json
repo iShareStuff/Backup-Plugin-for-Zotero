@@ -3,7 +3,7 @@
   "addonName": "Backup-Plugin-for-Zotero",
   "addonID": "Backup-Plugin-for-Zotero@iShareStuff.com",
   "addonRef": "zoterobackup",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "Backup ZoteroData",
   "main": "src/index.js",
   "scripts": {
