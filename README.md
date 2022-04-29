@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: your project
+ * @version: 1.0
+ * @Author: ingopro
+ * @Date: 2022-04-24 22:08:23
+ * @LastEditors: isharestuff
+ * @LastEditTime: 2022-04-29 17:15:15
+-->
 # Backup Plugin for Zotero
 欢迎[B站](https://space.bilibili.com/20435673)、[知乎](https://www.zhihu.com/people/ShareStuff/posts)和公众号关注ShareStuff！
 
@@ -21,19 +29,35 @@ jurism_profile_ini和zotero_profile_ini文件夹为路径信息【用不到】�
 
 ![image](https://user-images.githubusercontent.com/61663626/163553876-a8159a6f-d419-4720-85f4-d80890aedc84.png)
 
-
-
-Win默认目录为C:/Users/share【这里应该是你的用户名】/ZoteroBackup
-
-Linux默认目录为/home/share【这里应该是你的用户名】/ZoteroBackup
-
-【Mac用户未测试，不知道支不支持】
-
-# 最新更新【支持自定义路径】，支持Mac系统
-
-
 * 安装好后，会创建默认目录并备份，生成当天的日期文件夹，这也是第一次备份（有提示信息）。
 
 * 第一次备份后，每次重新打开zotero软件，都会提示您是否备份，按需选择即可。
 
 * 可以根据提示，选择是否只备份配置文件，或者全备份【前者不含数据如pdf等文件，后者全包含】
+  
+# Quick Start Guide
+
+## Install
+
+- Download the latest release (.xpi file) from the [Releases Page](https://github.com/iShareStuff/Backup-Plugin-for-Zotero/releases)  
+  _Note_ If you're using Firefox as your browser, right-click the `.xpi` and select "Save As.."
+- In Zotero click `Tools` in the top menu bar and then click `Addons`
+- Go to the Extensions page and then click the gear icon in the top right.
+- Select `Install Add-on from file`.
+- Browse to where you downloaded the `.xpi` file and select it.
+- Restart Zotero, by clicking `restart now` in the extensions list where the
+  ZoteroTheme plugin is now listed.
+
+## Usage
+
+## Development & Contributing
+
+This add-on is built on the Zotero Addon Template of [zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate).
+
+## Disclaimer
+
+Use this code under AGPL(open source required). No warranties are provided. Keep the laws of your locality in mind!
+
+Part of the code of this repo refers to other open-source projects within the allowed scope.
+
+- [zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate)
